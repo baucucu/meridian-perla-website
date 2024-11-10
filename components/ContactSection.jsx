@@ -14,7 +14,7 @@ export default function ContactSection() {
     >
       <iframe
         aria-label="Contact Meridian-Perla"
-        frameborder="0"
+        frameBorder="0"
         style={{ width: "100%", height: "500px" }}
         src="https://forms.zohopublic.com/helloap1/form/ContactMeridianPerla/formperma/d6DPwZdKBvujcjp-0ODLj61bB8x2VNXc8nZnZu3mxFE"
       ></iframe>
