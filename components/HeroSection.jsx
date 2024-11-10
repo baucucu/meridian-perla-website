@@ -1,7 +1,8 @@
 "use client";
 
 import { MessageCircle, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -50,9 +51,19 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Button size="lg" className="w-full sm:w-auto bg-white text-black">
-            <MessageCircle className="mr-2 h-5 w-5" />
-            Cere oferta
+          <Button
+            size="lg"
+            className="w-full sm:w-auto"
+            variant="secondary"
+            asChild
+          >
+            <Link
+              className={buttonVariants({ variant: "outline" })}
+              href="#contact"
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Solicită Ofertă
+            </Link>
           </Button>
         </motion.div>
       </div>

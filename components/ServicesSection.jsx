@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Home, Plus, Briefcase, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function ServicesSection() {
   const services = [
@@ -67,9 +68,19 @@ export default function ServicesSection() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  Solicită Ofertă
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto"
+                  // variant="secondary"
+                  asChild
+                >
+                  <Link
+                    className={buttonVariants({ variant: "primary" })}
+                    href="#contact"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Solicită Ofertă
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>

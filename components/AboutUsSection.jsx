@@ -1,7 +1,14 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Users, Calendar, Award, ArrowRight } from "lucide-react";
+import {
+  CheckCircle,
+  Users,
+  Calendar,
+  Award,
+  MessageCircle,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DespreCompanie() {
   const avantaje = [
@@ -25,11 +32,21 @@ export default function DespreCompanie() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button className="inline-flex items-center justify-center">
-                Cere o ofertă
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button
+                size="lg"
+                className="w-full sm:w-auto"
+                // variant="secondary"
+                asChild
+              >
+                <Link
+                  className={buttonVariants({ variant: "primary" })}
+                  href="#contact"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Solicită Ofertă
+                </Link>
               </Button>
-              <Button variant="outline">Contactează-ne</Button>
+              {/* <Button variant="outline">Contactează-ne</Button> */}
             </div>
           </div>
           <div className="flex flex-col justify-center space-y-4">
