@@ -12,6 +12,7 @@ import AboutUsSection from "@/components/AboutUsSection";
 import FeedbackSection from "@/components/FeedbackSection";
 import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
+import Script from "next/script";
 
 export default function Page() {
   return (
@@ -24,6 +25,51 @@ export default function Page() {
         <FeedbackSection />
         {/* <PricingSection /> */}
         <ContactSection />
+        <Script
+          id="whatsapp-widget"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function() {
+        var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?50746';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var options = {
+          "enabled": true,
+          "chatButtonSetting": {
+            "backgroundColor": "#00e785",
+            "ctaText": "Intreaba pe Whatsapp",
+            "borderRadius": "25",
+            "marginLeft": "0",
+            "marginRight": "20",
+            "marginBottom": "20",
+            "ctaIconWATI": false,
+            "position": "right"
+          },
+          "brandSetting": {
+            "brandName": "Meridian Perla",
+            "brandSubTitle": "undefined",
+            "brandImg": "",
+            "welcomeText": "Buna ziua,\\nCu ce va putem ajuta?",
+            "messageText": "",
+            "backgroundColor": "#00e785",
+            "ctaText": "Intreaba pe Whatsapp",
+            "borderRadius": "25",
+            "autoShow": false,
+            "phoneNumber": "40754832167"
+          }
+        };
+        s.onload = function() {
+          CreateWhatsappChatWidget(options);
+        };
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      })();
+    `,
+          }}
+        />
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500 dark:text-gray-400">
