@@ -58,7 +58,7 @@ export default function Page() {
             "ctaText": "Intreaba pe Whatsapp",
             "borderRadius": "25",
             "autoShow": false,
-            "phoneNumber": "40754832167"
+            "phoneNumber": "40729702405"
           }
         };
         s.onload = function() {
